@@ -1,0 +1,22 @@
+from flask import *
+
+app = Flask(__name__)
+
+@app.route('/')
+def hello_world():
+    return 'Lulu ClickFunnel Integration'
+
+@app.route('/funnel_webhooks/test', methods=['POST'])
+def lulu():
+    requestBody = request.get_json()
+    print(requestBody)
+    return {'status':'success'}
+
+
+@app.route('/test', methods=['GET'])
+def test():
+    hh = {'id': 95857585, 'products': [{'id': 3894182, 'name': 'Unstoppable Book', 'stripe_plan': None, 'amount': {'cents': 1399, 'currency_iso': 'USD'}, 'amount_currency': 'USD', 'created_at': '2021-11-30T15:37:31.000Z', 'updated_at': '2022-01-21T17:38:38.000Z', 'subject': '', 'html_body': '<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">\r\n\r\n', 'thank_you_page_id': 74332606, 'stripe_cancel_after_payments': None, 'bump': False, 'cart_product_id': None, 'billing_integration': 'stripe_account-246913', 'infusionsoft_product_id': None, 'infusionsoft_subscription_id': None, 'ontraport_product_id': None, 'ontraport_payment_count': None, 'ontraport_payment_type': None, 'ontraport_unit': None, 'ontraport_gateway_id': None, 'ontraport_invoice_id': None, 'commissionable': False, 'statement_descriptor': 'Unstoppable Book ', 'netsuite_id': None, 'netsuite_tag': None, 'netsuite_class': None, 'description': 'Unstoppable: Compete with Your Best Self and Win will help you: *Uncover the keys to achieving a winning mindset\r\n*\u200bLearn strategies for putting what you know into winning action\r\n\u200b\u200b*Discover the secret to creating a winning brand\r\n\u200b*Master the art of living and leading from your zone of genius'}], 'member_id': None, 'contact': {'id': 1970633997, 'page_id': 50866209, 'first_name': 'Dorie', 'last_name': 'McKnight', 'name': 'Dorie McKnight', 'address': '8239 West Albeniz Place', 'city': 'Phoenix ', 'country': 'US', 'state': 'AZ', 'zip': '85043', 'email': 'doriemcknight@gmail.com', 'phone': '6122394452', 'webinar_at': None, 'webinar_last_time': None, 'webinar_ext': 'BgLPmULt', 'created_at': '2022-01-31T18:03:33.000Z', 'updated_at': '2022-01-31T18:03:33.000Z', 'ip': '2607:fb90:72ae:173:0:9:73:ae01', 'funnel_id': 11445447, 'funnel_step_id': 72162567, 'unsubscribed_at': None, 'cf_uvid': 'null', 'cart_affiliate_id': '', 'shipping_address': '8239 West Albeniz Place', 'shipping_city': 'Phoenix ', 'shipping_country': 'US', 'shipping_state': 'AZ', 'shipping_zip': '85043', 'vat_number': '', 'affiliate_id': None, 'aff_sub': '', 'aff_sub2': '', 'cf_affiliate_id': None, 'contact_profile': {'id': 883742372, 'first_name': 'Dorie', 'last_name': 'McKnight', 'address': '8239 West Albeniz Place', 'city': 'Phoenix', 'country': 'US', 'state': 'AZ', 'zip': '85043', 'email': 'doriemcknight@gmail.com', 'phone': '6122394452', 'created_at': '2022-01-31T18:01:57.000Z', 'updated_at': '2022-01-31T18:03:33.000Z', 'unsubscribed_at': None, 'cf_uvid': '9d9df8fab8dd2fb0bba4f8bfed2811d3', 'shipping_address': '8239 West Albeniz Place', 'shipping_country': 'US', 'shipping_city': 'Phoenix', 'shipping_state': 'AZ', 'shipping_zip': '85043', 'vat_number': None, 'middle_name': None, 'websites': None, 'location_general': None, 'normalized_location': None, 'deduced_location': None, 'age': None, 'gender': None, 'age_range_lower': None, 'age_range_upper': None, 'action_score': None, 'known_ltv': '0.00', 'tags': [], 'time_zone': 'Mountain Time (US & Canada)'}, 'additional_info': {'cf_affiliate_id': '', 'time_zone': 'Mountain Time (US & Canada)', 'utm_source': '', 'utm_medium': '', 'utm_campaign': '', 'utm_term': '', 'utm_content': '', 'cf_uvid': 'null', 'webinar_delay': '-63810845364188', 'purchase': {'product_ids': ['3894182'], 'payment_method_nonce': '', 'order_saas_url': '', 'stripe_customer_token': 'pm_1KO4DuLuJt1MEKG7sJPBltvY'}}, 'time_zone': 'Mountain Time (US & Canada)'}, 'funnel_id': 11445447, 'stripe_customer_token': 'pm_1KO4DuLuJt1MEKG7sJPBltvY', 'created_at': '2022-01-31T18:03:33.000Z', 'updated_at': '2022-01-31T18:03:33.000Z', 'subscription_id': None, 'charge_id': 'pi_3KO4DzLuJt1MEKG70XbqJc8A', 'ctransreceipt': None, 'status': 'paid', 'fulfillment_status': None, 'fulfillment_id': None, 'fulfillments': {}, 'payments_count': None, 'infusionsoft_ccid': None, 'oap_customer_id': None, 'payment_instrument_type': None, 'original_amount_cents': 1399, 'original_amount': {'cents': 1399, 'currency_iso': 'USD'}, 'original_amount_currency': 'USD', 'manual': False, 'error_message': None, 'nmi_customer_vault_id': None, 'event': 'created'}
+    return hh
+
+if __name__ == '__main__':
+    app.run(debug=True)
